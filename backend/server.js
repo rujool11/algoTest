@@ -1,10 +1,6 @@
 import { config } from 'dotenv';
 import express from 'express';
-import cors from 'cors';
 import { connectDB } from './config/database.js';
-import pkg from 'mongoose';
-import cookieParser from 'cookie-parser';
-const { connect, connection } = pkg;
 import problemRouter from './routes/problemRouter.js';
 import submissionRouter from './routes/submissionRouter.js';
 import testcaseRouter from './routes/testcaseRouter.js';
@@ -19,12 +15,6 @@ config();
 const app = express();
 app.use(express.json());
 
-// Middleware
-app.use(cors({
-    origin: process.env.CLIENT_URL,
-    credentials: true,
-}));
-app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
