@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
+import validator from "validator";
 import bcrypt from "bcryptjs";
 
 const userModel = mongoose.Schema(
     {
         username: { type: String, required: true , unique: true},
-        email: { type: String, required: true , validate : [validator.isEmail, 'Please enter a valid email']},
+        email: { type: String, unique: true, required: true , validate : [validator.isEmail, 'Please enter a valid email']},
         password: { type: String, required: true },
         picture : { type: String, required: true, default: "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"},
         problems: { type: Number, required: true, default: 0},
