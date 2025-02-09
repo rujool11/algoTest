@@ -37,7 +37,7 @@ const Register = asyncHandler(async (req, res) => {
         })
     } else {
         res.status(400);
-        throw new Error("failed to create user");
+        throw new Error("SERVER ERROR: failed to create user");
     }
 });
 
