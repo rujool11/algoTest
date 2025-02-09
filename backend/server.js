@@ -7,12 +7,16 @@ import testcaseRouter from './routes/testcaseRouter.js';
 import userRouter from './routes/userRouter.js';
 import runRouter from './routes/runRouter.js';
 import { notFound, errorHandler } from './middlewares/errorMiddleware.js';
+import cors from "cors";
+
 
 // load .env
 config();
 
 // start express app
 const app = express();
+
+app.use(cors({ origin: process.env.CLIENT_URL, credentials: true })); // Apply CORS
 app.use(express.json());
 
 app.use(express.json());

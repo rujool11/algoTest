@@ -7,7 +7,11 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-    setUser(userInfo);
+    try {
+      setUser(userInfo);
+    } catch (error) {
+      localStorage.removeItem("userInfo");
+    }
     }, []); 
 
   return (
