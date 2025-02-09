@@ -43,7 +43,7 @@ const Signup = () => {
     setLoading(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const { username, email, password, confirmPassword, profilePicture } = formData;
 
@@ -62,8 +62,30 @@ const Signup = () => {
       return;
     }
 
-    // Handle form submission logic here (e.g., API request to register user)
-    console.log("User registered:", { username, email, password, profilePicture });
+    const newFormData = new FormData();
+    newFormData.append("username", username);
+    newFormData.append("email", email);
+    newFormData.append("password", password);
+    if (profilePicture) newFormData.append("profilePicture", profilePicture);
+
+    setLoading(true);
+    try {
+      const { data } = await axios.post(
+        `${BACKEND_URL}/api/user/register`,
+        newFormData,
+        { headers: { "Content-Type": "application/json" } }
+      );
+
+      toast.success("Registration successful.");
+      localStorage.setItem("userInfo", JSON.stringify(data));
+      navigate("/content");
+
+    } catch (error) {
+      toast.error(error.response?.data?.message || "Registration failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+
   };
 
   return (
