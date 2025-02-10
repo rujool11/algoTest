@@ -43,7 +43,6 @@ const Login = () => {
       const { data } = await axios.post(
         `${BACKEND_URL}/api/user/login`,
         formData,
-        { headers: { "Content-Type": "application/json" } }
       );
 
       toast.success("Login successful.");
