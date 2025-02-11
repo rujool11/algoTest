@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../components/misc/NavBar.jsx';
+import Navbar from '../components/misc/Navbar.jsx';
 import Hero from '../components/misc/Hero.jsx';
 import bgImage from "../assets/peakpx.jpg";
 
@@ -12,7 +12,7 @@ const LandingPage = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}>
-      <NavBar />
+      <Navbar />
       <Hero />
       {/* Additional sections */}
     </div>
