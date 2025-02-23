@@ -28,6 +28,7 @@ const Login = asyncHandler(async (req, res) => {
     }
 
     // If auth is successful, return user data 
+    res.status(200);
     res.json({
         _id: user._id,
         username: user.username,

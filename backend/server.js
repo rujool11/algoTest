@@ -30,12 +30,13 @@ app.use('/api/submissions', submissionRouter);
 app.use('/api/testcase', testcaseRouter);
 app.use('/api/user', userRouter);
 
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {   
     res.send('API is running');
-})
+});
 
 app.use(notFound);
 app.use(errorHandler);
+
 
 
 // start server
