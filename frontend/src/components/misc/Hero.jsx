@@ -6,6 +6,8 @@ const Hero = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="pt-20 pb-12 text-center">
           <h1 className="text-5xl tracking-tight font-extrabold text-white sm:text-6xl">
+            <span className="block text-orange-400">💡 algoTest</span>
+            <div className="min-h-[5vh]"></div>
             <span className="block">Practice Coding</span>
             <span className="block text-yellow-400">Problems</span>
           </h1>
