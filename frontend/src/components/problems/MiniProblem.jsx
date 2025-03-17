@@ -28,14 +28,20 @@ const MiniProblem = ({ problem }) => {
 
   const handleClick = () => {
     navigate(`/problem/${problem._id}`);
-  }
+  };
+
+  const maxLength = 100;
+  const truncatedDescription =
+    problem.description.length > maxLength
+      ? problem.description.substring(0, maxLength) + "..."
+      : problem.description;
 
   return (
     <div
       className={`p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition duration-300 ease-in-out border-2 ${borderClasses[color]}`}
     >
       <h2 className="text-2xl text-white font-bold mb-3">{problem.name}</h2>
-      <p className="text-gray-300 mb-4">{problem.description}</p>
+      <p className="text-gray-300 mb-4">{truncatedDescription}</p>
       <div className="flex items-center mb-4">
         <span
           className={`inline-block w-3 h-3 rounded-full bg-${color} mr-2`}
