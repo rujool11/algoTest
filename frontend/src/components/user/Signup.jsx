@@ -95,7 +95,7 @@ const Signup = () => {
 
       toast.success("Registration successful.");
       localStorage.setItem("userInfo", JSON.stringify(data));
-      navigate("/problem");
+      navigate("/problems");
 
     } catch (error) {
       toast.error(

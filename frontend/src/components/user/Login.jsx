@@ -47,7 +47,7 @@ const Login = () => {
 
       toast.success("Login successful.");
       localStorage.setItem("userInfo", JSON.stringify(data));
-      navigate("/problem");
+      navigate("/problems");
     } catch (error) {
       toast.error(error.response?.data?.message || "Login failed. Please try again.");
     } finally {
