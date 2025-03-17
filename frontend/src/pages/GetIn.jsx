@@ -38,4 +38,3 @@ const GetIn = () => {
 };
 
 export default GetIn;
-
