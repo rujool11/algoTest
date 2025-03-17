@@ -3,6 +3,7 @@ import MiniProblem from "../components/problems/MiniProblem.jsx";
 import axios from "axios";
 import { toast } from "react-toastify";
 import bgImage from "../assets/boris-stefanik-wxJscL5ZzDA-unsplash.jpg";
+import Logout from "../components/user/Logout.jsx";
 
 const Content = () => {
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
@@ -31,16 +32,20 @@ const Content = () => {
   });
 
   return (
-    <div className="p-4 min-h-screen"
-        style = {{
-          backgroundImage: `url(${bgImage})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundAttachment  : "fixed",
-        }} 
+    <div
+      className="p-4 min-h-screen"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
     >
-      <h1 className="text-3xl text-white font-bold mx-30 mb-8">Problems</h1>
+      <div className="flex justify-between items-center ml-30 mr-30 mb-8">
+        <h1 className="text-3xl text-white font-bold ">Problems</h1>
+        <Logout />
+      </div>
       <div className="flex gap-2 mb-6 mx-30">
         {["all", "easy", "medium", "hard"].map((level) => (
           <button
