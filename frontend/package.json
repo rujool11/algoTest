@@ -10,7 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@codemirror/lang-cpp": "^6.0.2",
+    "@codemirror/lang-python": "^6.1.7",
     "@tailwindcss/vite": "^4.0.5",
+    "@uiw/codemirror-theme-dracula": "^4.23.10",
+    "@uiw/react-codemirror": "^4.23.10",
     "axios": "^1.7.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
