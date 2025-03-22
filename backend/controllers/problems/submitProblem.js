@@ -2,11 +2,16 @@ import Problem from '../../models/problemModel.js';
 import asyncHandler from 'express-async-handler';
 
 const submitProblem = asyncHandler(async (req, res) => {
-    const { name, description, sampleInput, sampleOutput, difficulty } = req.body;
+    const { name, description, sampleInput, sampleOutput, difficulty, password } = req.body;
 
-    if (!name || !description || !sampleInput || !sampleOutput || !difficulty) {   
+    if (!name || !description || !sampleInput || !sampleOutput || !difficulty || !password) {   
         res.status(400);
         throw new Error("MISSING INPUTS: please fill out all fields");
+    }
+
+    if (password !== process.env.SUBMIT_PROBLEM_PASSWORD){
+        res.status(401);
+        throw new Error("UNAUTHORIZED: invalid password");
     }
 
     const problemExists = await Problem.findOne({
