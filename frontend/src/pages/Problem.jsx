@@ -11,7 +11,27 @@ const ProblemPage = () => {
   const { pid } = useParams();
   const [problem, setProblem] = useState(null);
   const [language, setLanguage] = useState("python");
-  const [code, setCode] = useState("");
+  
+  // Default code snippets for each language.
+  const defaultCode = {
+    python: `# Write your Python code here
+def main():
+    pass
+
+if __name__ == "__main__":
+    main()`,
+    cpp: `// Write your C++ code here
+#include <iostream>
+using namespace std;
+
+int main() {
+  
+    return 0;
+}`
+  };
+
+  // Set initial code for Python
+  const [code, setCode] = useState(defaultCode[language]);
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
@@ -26,6 +46,11 @@ const ProblemPage = () => {
     fetchProblem();
   }, [pid]);
 
+  // When language changes, update the code with the default code snippet.
+  useEffect(() => {
+    setCode(defaultCode[language]);
+  }, [language]);
+
   if (!problem) return <div className="text-center mt-10">Loading...</div>;
 
   const difficultyColors = {
@@ -37,7 +62,7 @@ const ProblemPage = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <nav className="flex justify-between p-6 bg-gray-900 shadow-md">
-        <h1 className="text-2xl font-semibold">🧠 Work out the problem! </h1>
+        <h1 className="text-2xl font-semibold">🧠 Work out the problem!</h1>
         <Logout />
       </nav>
       <div className="flex h-screen p-6 gap-6">
@@ -83,6 +108,8 @@ const ProblemPage = () => {
               theme={dracula}
               extensions={[language === "python" ? python() : cpp()]}
               onChange={(value) => setCode(value)}
+              minHeight="350px"
+              style={{ fontSize: 14 }}
             />
           </div>
         </div>
