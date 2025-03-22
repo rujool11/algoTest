@@ -5,14 +5,14 @@ import submitProblem from '../controllers/problems/submitProblem.js';
 import deleteProblemById from '../controllers/problems/deleteProblemById.js';
 import getProblemById from '../controllers/problems/getProblemById.js'; 
 import deleteAllProblems from '../controllers/problems/deleteAllProblems.js';
-import { verifySubmitPassword } from '../middlewares/adminMiddleware.js';
+import { verifySubmitPassword, verifyDeletePassword } from '../middlewares/adminMiddleware.js';
 
 const router = express.Router();
 
-router.delete('/all', protect, deleteAllProblems);
+router.delete('/all', protect, verifyDeletePassword, deleteAllProblems);
 router.get('/', getAllProblems);
 router.get('/:id', getProblemById);
 router.post('/', protect, verifySubmitPassword, submitProblem);
-router.delete('/:id', protect, deleteProblemById);
+router.delete('/:id', protect, verifyDeletePassword, deleteProblemById);
 
 export default router;

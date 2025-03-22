@@ -8,3 +8,13 @@ export const verifySubmitPassword = asyncHandler((req, res, next) => {
   }
   next();
 });
+
+
+export const verifyDeletePassword = asyncHandler((req, res, next) => {
+    const providedPassword = req.headers["x-delete-password"];
+    if (providedPassword !== process.env.DELETE_PROBLEM_PASSWORD) {
+      res.status(401);
+      throw new Error("UNAUTHORIZED: Invalid deletion password");
+    }
+    next();
+  });
