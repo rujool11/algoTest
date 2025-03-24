@@ -6,7 +6,7 @@ const protect = asyncHandler( async (req, res, next) => {
     let token;
     if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
         try {
-            // token fork Bearer token_value, so split
+            // token form Bearer token_value, so split
             token = req.headers.authorization.split(' ')[1];
             const decoded = jwt.verify(token, process.env.JWT_SECRET);
             req.user = await User.findById(decoded.id).select("-password"); // add user field to request
