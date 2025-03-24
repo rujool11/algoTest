@@ -6,6 +6,8 @@ import CodeMirror from "@uiw/react-codemirror";
 import { python } from "@codemirror/lang-python";
 import { cpp } from "@codemirror/lang-cpp";
 import { dracula } from "@uiw/codemirror-theme-dracula";
+import ProblemSubmissionNav from "../components/problems/ProblemSubmissionNav.jsx";
+import ProblemNav from "../components/problems/ProblemNav.jsx";
 
 const ProblemPage = () => {
   const { pid } = useParams();
@@ -63,7 +65,11 @@ int main() {
     <div className="min-h-screen bg-gray-900 text-white">
       <nav className="flex justify-between p-6 bg-gray-900 shadow-md">
         <h1 className="text-2xl font-semibold">🧠 Work out the problem!</h1>
-        <Logout />
+        <div className="flex items-center space-x-4">
+          <ProblemNav />
+          <ProblemSubmissionNav />
+          <Logout />
+        </div>
       </nav>
       <div className="flex h-screen p-6 gap-6">
         {/* Problem Description Section */}
