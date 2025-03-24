@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Signup from "../components/user/Signup.jsx";
 import Login from "../components/user/Login.jsx";
-import { ToastContainer } from "react-toastify";
 import backgroundImage from "../assets/kyle-waterston-4lcBD53rOMw-unsplash.jpg";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -32,7 +31,6 @@ const GetIn = () => {
         </p>
       </div>
 
-      <ToastContainer />
     </div>
   );
 };
