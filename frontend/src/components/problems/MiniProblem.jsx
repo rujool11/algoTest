@@ -51,7 +51,7 @@ const MiniProblem = ({ problem }) => {
         </span>
       </div>
       <button
-        className="rounded bg-blue-600 hover:bg-blue-800 text-white px-4 py-2"
+        className="rounded bg-blue-800 hover:bg-blue-600 text-white px-4 py-2"
         onClick={handleClick}
       >
         Open
