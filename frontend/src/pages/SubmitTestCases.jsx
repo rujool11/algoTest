@@ -17,6 +17,7 @@ const SubmitTestCases = () => {
   const [password, setPassword] = useState("");
   const [testCases, setTestCases] = useState([{ input: "", output: "" }]);
   const [loading, setLoading] = useState(false);
+  const [searchLoading, setSearchLoading] = useState(false);
 
   // Handle changes for each test case row
   const handleTestCaseChange = (index, field, value) => {
@@ -29,6 +30,27 @@ const SubmitTestCases = () => {
   const addTestCaseRow = () => {
     setTestCases([...testCases, { input: "", output: "" }]);
   };
+
+  // handle search functionality
+  const handleSearch = async () => {
+    setSearchLoading(true);
+    try {
+      const config = {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      }
+      const { data } = await axios.get(
+        `${BACKEND_URL}/api/problem/search?search=${search}`,
+        config,
+      );
+      setProblems(data);
+    } catch (error) {
+      toast.error("Failed to fetch search results");
+    } finally {
+      setSearchLoading(false);
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -91,7 +113,7 @@ const SubmitTestCases = () => {
             />
             <button
               className="bg-blue-600 text-white p-2 rounded mb-4"
-              // onClick={handleSearch}
+              onClick={handleSearch}
             >
               Search
             </button>
@@ -106,6 +128,12 @@ const SubmitTestCases = () => {
               />
             ))}
           </div>
+            {searchLoading ? (
+              <div className="flex items-center justify-center h-full">
+                <p className="text-white">Loading...</p>
+              </div>
+            ) : null} 
+            
         </div>
 
         {/* Right Side: Test Case Submission Form */}
