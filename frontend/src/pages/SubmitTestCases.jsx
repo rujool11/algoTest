@@ -12,11 +12,7 @@ const SubmitTestCases = () => {
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
   const [search, setSearch] = useState("");
-  const [problems] = useState([
-    { _id: "1", name: "Sample Problem A", difficulty: "easy" },
-    { _id: "2", name: "Sample Problem B", difficulty: "medium" },
-    { _id: "3", name: "Sample Problem C", difficulty: "hard" },
-  ]);
+  const [problems, setProblems] = useState([]);
   const [selectedProblem, setSelectedProblem] = useState(null);
   const [password, setPassword] = useState("");
   const [testCases, setTestCases] = useState([{ input: "", output: "" }]);
@@ -24,12 +20,12 @@ const SubmitTestCases = () => {
 
   // Handle changes for each test case row
   const handleTestCaseChange = (index, field, value) => {
-    const newTestCases = [...testCases];
+    const newTestCases = [...testCases]; // shallow copy
     newTestCases[index][field] = value;
     setTestCases(newTestCases);
   };
 
-  // Add a new test case row
+  // add new empty test case row
   const addTestCaseRow = () => {
     setTestCases([...testCases, { input: "", output: "" }]);
   };
@@ -69,10 +65,6 @@ const SubmitTestCases = () => {
     }
   };
 
-  const filteredProblems = problems.filter((p) =>
-    p.name.toLowerCase().includes(search.toLowerCase())
-  );
-
   return (
     <>
       {/* Top Navbar */}
@@ -89,16 +81,24 @@ const SubmitTestCases = () => {
       <div className="min-h-screen flex bg-gray-900 p-8">
         {/* Left Side: Search and MiniMiniProblem */}
         <div className="flex-3 flex flex-col bg-gray-800 p-4 mr-4 rounded">
-          <input
-            type="text"
-            placeholder="Search problems..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="p-2 rounded mb-4 bg-gray-700 text-white outline-none"
-          />
-          {/* List filtered problems */}
+          <div className="flex">
+            <input
+              type="text"
+              placeholder="Search problems..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="p-2 w-full rounded mb-4 bg-gray-700 text-white outline-none"
+            />
+            <button
+              className="bg-blue-600 text-white p-2 rounded mb-4"
+              // onClick={handleSearch}
+            >
+              Search
+            </button>
+          </div>
+          {/* List problems */}
           <div className="overflow-y-auto">
-            {filteredProblems.map((problem) => (
+            {problems.map((problem) => (
               <MiniMiniProblem
                 key={problem._id}
                 problem={problem}
@@ -133,7 +133,7 @@ const SubmitTestCases = () => {
             </div>
           ) : (
             <p className="text-gray-400 mb-4">
-              No problem selected. Please choose a problem from the left.
+              No problem selected. Please choose a problem .
             </p>
           )}
 
