@@ -7,6 +7,7 @@ import Problem from './pages/Problem.jsx';
 import Error from './pages/Error.jsx';
 import SubmitProblem from './pages/SubmitProblem.jsx';
 import SubmitTestCases from './pages/SubmitTestCases.jsx';
+import Delete from './pages/Delete.jsx';
 import './App.css'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/problem/:pid" element={<Problem/>} />
           <Route path="/submit-problem" element={<SubmitProblem/>} />
           <Route path="/submit-testcase" element={<SubmitTestCases/>} />
+          <Route path="/delete" element={<Delete/>} />
           <Route path="*" element={<Error/>} />
         </Routes>
       </BrowserRouter>
