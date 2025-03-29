@@ -5,6 +5,8 @@ import problemSettingSvg from "../assets/problem_setting.svg";
 import { Context } from "../main";
 import Logout from "../components/user/Logout";
 import ProblemNav from "../components/problems/ProblemNav";
+import TestCaseNav from "../components/misc/TestCaseNav";
+import DeleteNav from "../components/misc/DeleteNav";
 
 const SubmitProblem = () => {
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
@@ -62,6 +64,8 @@ const SubmitProblem = () => {
           </h1>
           <div className="flex items-center space-x-4">
             <ProblemNav />
+            <TestCaseNav />
+            <DeleteNav />
             <Logout />
           </div>
         </div>

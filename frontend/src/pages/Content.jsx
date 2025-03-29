@@ -6,6 +6,8 @@ import bgImage from "../assets/boris-stefanik-wxJscL5ZzDA-unsplash.jpg";
 import Logout from "../components/user/Logout.jsx";
 import ProblemSubmissionNav from "../components/problems/ProblemSubmissionNav.jsx";
 import { Context } from "../main.jsx";
+import DeleteNav from "../components/misc/DeleteNav.jsx";
+import TestCaseNav from "../components/misc/TestCaseNav.jsx";
 
 const Content = () => {
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
@@ -71,7 +73,7 @@ const Content = () => {
         backgroundAttachment: "fixed",
       }}
     >
-      <div className="flex flex-col md:flex-row justify-between items-center ml-30 mr-30 mb-8 space-y-4 md:space-y-0">
+      <div className="flex flex-col md:flex-row justify-between items-center ml-15 mr-15 mb-8 space-y-4 md:space-y-0">
         <h1 className="text-3xl text-white font-bold">Problems</h1>
         <form onSubmit={handleSearch} className="flex items-center">
           <input
@@ -90,6 +92,8 @@ const Content = () => {
         </form>
         <div className="flex items-center space-x-4">
           <ProblemSubmissionNav />
+          <TestCaseNav />
+          <DeleteNav />
           <Logout />
         </div>
       </div>

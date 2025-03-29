@@ -7,6 +7,7 @@ import ProblemSubmissionNav from "../components/problems/ProblemSubmissionNav";
 import MiniMiniProblem from "../components/problems/MiniMiniProblem";
 import MiniTestCase from "../components/misc/MiniTestCase"; 
 import { Context } from "../main";
+import TestCaseNav from "../components/misc/TestCaseNav";
 
 const DeletePage = () => {
   const { user } = useContext(Context);
@@ -157,6 +158,7 @@ const DeletePage = () => {
         <h1 className="text-2xl font-semibold text-white">Delete Problems &amp; Test Cases</h1>
         <div className="flex items-center space-x-4">
           <ProblemSubmissionNav />
+          <TestCaseNav />
           <ProblemNav />
           <Logout />
         </div>

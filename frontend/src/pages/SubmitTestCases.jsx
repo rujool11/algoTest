@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import Logout from "../components/user/Logout";
 import ProblemNav from "../components/problems/ProblemNav";
 import ProblemSubmissionNav from "../components/problems/ProblemSubmissionNav";
+import DeleteNav from "../components/misc/DeleteNav";
 import MiniMiniProblem from "../components/problems/MiniMiniProblem";
 import { Context } from "../main";
 
@@ -95,6 +96,7 @@ const SubmitTestCases = () => {
         <div className="flex items-center space-x-4">
           <ProblemSubmissionNav />
           <ProblemNav />
+          <DeleteNav />
           <Logout />
         </div>
       </nav>
