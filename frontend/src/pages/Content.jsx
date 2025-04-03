@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext } from "react";
 import MiniProblem from "../components/problems/MiniProblem.jsx";
 import axios from "axios";
 import { toast } from "react-toastify";
-import bgImage from "../assets/boris-stefanik-wxJscL5ZzDA-unsplash.jpg";
 import Logout from "../components/user/Logout.jsx";
 import ProblemSubmissionNav from "../components/problems/ProblemSubmissionNav.jsx";
 import { Context } from "../main.jsx";
@@ -63,16 +62,7 @@ const Content = () => {
   );
 
   return (
-    <div
-      className="p-4 min-h-screen"
-      style={{
-        backgroundImage: `url(${bgImage})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
-    >
+    <div className="p-4 min-h-screen bg-gray-900">
       <div className="flex flex-col md:flex-row justify-between items-center ml-15 mr-15 mb-8 space-y-4 md:space-y-0">
         <h1 className="text-3xl text-white font-bold">Problems</h1>
         <form onSubmit={handleSearch} className="flex items-center">
@@ -81,7 +71,7 @@ const Content = () => {
             placeholder="Search problems..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="px-4 py-2 rounded-l border-0 outline-none text-white bg-gray-900"
+            className="px-4 py-2 rounded-l border-0 outline-none text-white bg-gray-700"
           />
           <button
             type="submit"
@@ -117,7 +107,7 @@ const Content = () => {
       ) : filteredProblems.length === 0 ? (
         <p className="text-white mx-30">No problems found</p>
       ) : (
-        <div className="flex gap-4 flex-col overflow-x-auto mx-30">
+        <div className="grid grid-cols-2 gap-4 mx-20">
           {filteredProblems.map((problem) => (
             <MiniProblem key={problem._id} problem={problem} />
           ))}
