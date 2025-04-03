@@ -63,7 +63,7 @@ const Content = () => {
 
   return (
     <div className="p-4 min-h-screen bg-gray-900">
-      <div className="flex flex-col md:flex-row justify-between items-center ml-15 mr-15 mb-8 space-y-4 md:space-y-0">
+      <div className="flex flex-col md:flex-row justify-between items-center ml-15 mr-15 mb-8 mt-3 space-y-4 md:space-y-0">
         <h1 className="text-3xl text-white font-bold">Problems</h1>
         <form onSubmit={handleSearch} className="flex items-center">
           <input
