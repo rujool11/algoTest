@@ -30,7 +30,7 @@ const MiniProblem = ({ problem }) => {
     navigate(`/problem/${problem._id}`);
   };
 
-  const maxLength = 100;
+  const maxLength = 50;
   const truncatedDescription =
     problem.description.length > maxLength
       ? problem.description.substring(0, maxLength) + "..."
