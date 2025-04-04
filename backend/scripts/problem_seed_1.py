@@ -37,7 +37,7 @@ problems = [
     {
         "name": "Valid Anagram",
         "description": "Given two strings, determine if one is an anagram of the other. An anagram is formed by rearranging the letters of a word to produce a new word, using all original letters exactly once.",
-        "sampleInput": "stressed\ndessert",
+        "sampleInput": "cat\nact",
         "sampleOutput": "true",
         "difficulty": "Easy"
     },
