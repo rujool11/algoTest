@@ -89,10 +89,10 @@ test_cases = {
     ],
     "N Queens": [
         {"input": "1", "output": "Q"},
-        {"input": "4", "output": "4\n. Q . .  \n. . . Q  \nQ . . .  \n. . Q ."},
-        {"input": "5", "output": "5\nQ . . . .  \n. . . Q .  \n. Q . . .  \n. . . . Q  \n. . Q . ."},
-        {"input": "6", "output": "6\n. Q . . . .  \n. . . Q . .  \n. . . . . Q  \nQ . . . . .  \n. . Q . . .  \n. . . . Q ."},
-        {"input": "8", "output": "8\n. Q . . . . . .  \n. . . . Q . . .  \n. . . . . . . Q  \n. . . . . Q . .  \n. . . . . . Q .  \nQ . . . . . . .  \n. . Q . . . . .  \n. . . Q . . . ."}
+        {"input": "4", "output": ". Q . .  \n. . . Q  \nQ . . .  \n. . Q ."},
+        {"input": "5", "output": "Q . . . .  \n. . . Q .  \n. Q . . .  \n. . . . Q  \n. . Q . ."},
+        {"input": "6", "output": ". Q . . . .  \n. . . Q . .  \n. . . . . Q  \nQ . . . . .  \n. . Q . . .  \n. . . . Q ."},
+        {"input": "8", "output": ". Q . . . . . .  \n. . . . Q . . .  \n. . . . . . . Q  \n. . . . . Q . .  \n. . . . . . Q .  \nQ . . . . . . .  \n. . Q . . . . .  \n. . . Q . . . ."}
     ]
 }
 
