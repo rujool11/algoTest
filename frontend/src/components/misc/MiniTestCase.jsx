@@ -8,8 +8,15 @@ const MiniTestCase = ({ testCase, onSelect, selected }) => {
         selected ? "bg-gray-700" : ""
       }`}
     >
-      <h3 className="font-semibold text-lg text-white">Input: {testCase.input}</h3>
-      <p className="text-sm text-white">Output: {testCase.output}</p>
+      <h3 className="text-sm text-white">Input:</h3>
+      <div className="font-mono bg-gray-900 p-2 rounded-md text-white text-sm whitespace-pre-wrap">
+        {testCase.input}
+      </div>
+
+      <h3 className="text-sm text-white mt-2">Output:</h3>
+      <div className="font-mono bg-gray-900 p-2 rounded-md text-white text-sm whitespace-pre-wrap">
+        {testCase.output}
+      </div>
     </div>
   );
 };
