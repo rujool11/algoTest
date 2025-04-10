@@ -23,8 +23,7 @@ if (!fs.existsSync(codeDirectory)) {
 
 export const generateFile = (code, lang) => {
 
-    let randomChar = String.fromCharCode(97 + Math.floor(Math.random() * 26)); // random char a-z
-    let randomString = randomChar + uuidv4(); // add unique uuid
+    let randomString = uuidv4(); // add unique uuid
 
     randomString = randomString.replace(/-/g, '_'); // replace - with _ (for valid filenames)
     let fileName = `${randomString}.${lang}`;
