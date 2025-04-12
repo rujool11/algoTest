@@ -12,15 +12,25 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url); // absolute path of current file
 const __dirname = path.dirname(__filename); // current directory path 
 
-// directories for code and output
+// directories for code, output, and input
 const codeDirectory = path.join(__dirname, '../data/code');
 const outputDirectory = path.join(__dirname, '../data/output');
+const inputDirectory = path.join(__dirname, '../data/input');
 
 // make directory if doesnt exist already, recursive: true builds any parent directories also
 if (!fs.existsSync(codeDirectory)) {
     fs.mkdirSync(codeDirectory, {recursive : true});
 }
 
+// make outputDirectory if it does not exist
+if (!fs.existsSync(outputDirectory)) {
+    fs.mkdirSync(outputDirectory, { recursive: true });
+}
+
+// make inputDirectory if it does not exist
+if (!fs.existsSync(inputDirectory)) {
+    fs.mkdirSync(inputDirectory, { recursive: true });
+}
 export const generateFile = (code, lang) => {
 
     let randomString = uuidv4(); // add unique uuid

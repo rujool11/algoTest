@@ -61,11 +61,9 @@ export const execute_cpp = async (outputDirectory, filePath, customInput, random
             `g++ ${filePath} -o ${outputDirectory}/${randomString}`, 
             (err, stdout, stderr) => {
                 if (err) {
-                    console.log("Compilation Error : " + err);
                     returnable.error.message += "COMPILATION ERROR : " + err;
                 }
                 if (stderr) {
-                    console.log("Compilation Error : " + stderr);
                     returnable.error.message += "COMPILATION ERROR : " + stderr;
                 }    
             }
@@ -75,17 +73,20 @@ export const execute_cpp = async (outputDirectory, filePath, customInput, random
         compilationProcess.on('close', async (code) => {
             // if exit code 0, compilation successful
             if (code == 0) {
-                console.log("Compilation Done");
                 // file placed in ../data/inputs folder with the name <randomString>.txt
-                const inputFilePath = join(__dirname, '..', 'data', 'inputs', `${randomString}.txt`);
-                fs.writeFile(inputFilePath, customInput, (err) => {
-                    if (!err) {
-                        console.log('input file written succesfully');
-                    } else {
-                        console.log("Error in writing file inside compilation process cpp");
-                        console.error(err);
+                const inputFilePath = join(__dirname, '..', 'data', 'input', `${randomString}.txt`);
+                try {
+                    const inputDir = path.dirname(inputFilePath);
+                    if (!fs.existsSync(inputDir)) {
+                        fs.mkdirSync(inputDir, { recursive: true });
                     }
-                });
+                    fs.writeFileSync(inputFilePath, customInput);
+                } catch (err) {
+                    console.error(err);
+                    returnable.error.message = "FAILED TO WRITE INPUT FILE";
+                    return resolve(returnable);
+                }
+
                 // outputFilePath points to compiled executable file
                 const outputFilePath = join(outputDirectory, `${randomString}`);
                 try {
@@ -94,18 +95,14 @@ export const execute_cpp = async (outputDirectory, filePath, customInput, random
                         new Promise((_, reject) => setTimeout(() => reject(new Error('RUNTIME TLE')), 3000))
                     ]);
                 } catch (error) {
-                    console.log("Runtime Error : " + error);
                     returnable.error.message = "RUNTIME ERROR : " + error;
                     returnable.time = 3000;
                 } finally {
                     // delete inputFile
                     fs.unlink(inputFilePath, (err) => {
-                        if (!err) {
-                            console.log("input file deleted succesfuuly");
-                        } else {
-                            console.log("error in deleting input file .txt");
+                        if (err) {
                             console.log(err);
-                        }
+                        } 
                     });
                 }
             }

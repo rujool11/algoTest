@@ -1,5 +1,5 @@
 import { exec } from 'child_process';
-import { writeFile } from 'fs';
+import { writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
@@ -54,12 +54,14 @@ export const execute_python = async(outputDirectory, filePath, customInput, rand
     // located in '../data/input, named <randomString>.txt'
     const inputFilePath = join(__dirname, '..', 'data', 'input', `${randomString}.txt`);
     
-    // write customInput into inputFilePath asynchronously
-    writeFile(inputFilePath, customInput, (err) => {
-        if (err) {
-            console.error(err);
-        }
-    });
+    // write customInput into inputFilePath synchronously
+    try {
+        writeFileSync(inputFilePath, customInput);
+    } catch (err) {
+        console.error("FAILED TO WRITE INPUT FILE", err);
+        returnable.error.message = "FAILED TO WRITE INPUT FILE";
+        return returnable;
+    }
 
     try {
         // race two promises against each other
