@@ -9,7 +9,6 @@ const submissionModel = mongoose.Schema({
     code: { type: String, required: true },
     verdict: { type: String, default: 'Pending' },
     time: { type: Number },
-    memory: { type: Number },   
 }, {
     timestamps: true
 });
