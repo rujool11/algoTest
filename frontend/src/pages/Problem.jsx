@@ -9,6 +9,7 @@ import { dracula } from "@uiw/codemirror-theme-dracula";
 import ProblemSubmissionNav from "../components/problems/ProblemSubmissionNav.jsx";
 import ProblemNav from "../components/problems/ProblemNav.jsx";
 import RunButton from "../components/run/RunButton.jsx";
+import SubmitButton from "../components/run/SubmitButton.jsx";
 
 const ProblemPage = () => {
   const { pid } = useParams();
@@ -100,8 +101,9 @@ int main() {
         <div className="w-3/5 bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-xl font-bold">Code Editor</h2>
-            <div className="flex justify-between iterms-center gap-4">
+            <div className="flex justify-between items-center gap-4" >
             <RunButton code = {code} language={language}/>
+            <SubmitButton code = {code} language={language} problem={problem}/>
             <select
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
