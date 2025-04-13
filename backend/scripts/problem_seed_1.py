@@ -68,13 +68,6 @@ problems = [
         "sampleInput": "2 6",
         "sampleOutput": "3",
         "difficulty": "Hard"
-    },
-    {
-        "name": "N Queens",
-        "description": "Given an integer N, return one valid way to place N queens on an N×N chessboard such that no two queens attack each other.",
-        "sampleInput": "4",
-        "sampleOutput": ". Q . .  \n. . . Q  \nQ . . .  \n. . Q .",
-        "difficulty": "Hard"
     }
 ]
 

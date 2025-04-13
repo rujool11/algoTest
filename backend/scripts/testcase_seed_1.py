@@ -86,13 +86,6 @@ test_cases = {
         {"input": "3 14", "output": "4"},
         {"input": "1 1", "output": "1"},
         {"input": "1 3", "output": "3"}
-    ],
-    "N Queens": [
-        {"input": "1", "output": "Q"},
-        {"input": "4", "output": ". Q . .  \n. . . Q  \nQ . . .  \n. . Q ."},
-        {"input": "5", "output": "Q . . . .  \n. . . Q .  \n. Q . . .  \n. . . . Q  \n. . Q . ."},
-        {"input": "6", "output": ". Q . . . .  \n. . . Q . .  \n. . . . . Q  \nQ . . . . .  \n. . Q . . .  \n. . . . Q ."},
-        {"input": "8", "output": ". Q . . . . . .  \n. . . . Q . . .  \n. . . . . . . Q  \n. . . . . Q . .  \n. . . . . . Q .  \nQ . . . . . . .  \n. . Q . . . . .  \n. . . Q . . . ."}
     ]
 }
 
