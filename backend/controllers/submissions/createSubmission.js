@@ -63,7 +63,7 @@ const createSubmission = async (req, res) => {
             op.output = JSON.stringify(op.output);
         }
 
-        if (op.time > 5000) {
+        if (op.time > 2990) {
             verdict = "TLE";
             break;
         }

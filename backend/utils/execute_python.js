@@ -67,12 +67,12 @@ export const execute_python = async (outputDirectory, filePath, customInput, ran
     returnable = await Promise.race([
       runProcess(returnable, outputDirectory, randomString, inputFilePath),
       new Promise((_, reject) =>
-        setTimeout(() => reject(new Error("RUNTIME TLE")), 5000)
+        setTimeout(() => reject(new Error("RUNTIME TLE")), 3000)
       )
     ]);
   } catch (error) {
     returnable.error.message = "RUNTIME ERROR: " + error.message;
-    returnable.time = 5000;
+    returnable.time = 3000;
   } finally {
     // synchronously remove the temporary input file to avoid race conditions
     try {
