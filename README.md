@@ -24,53 +24,94 @@
 ## 🖼️ Screenshots
 
 ### 🔐 Authentication
-**Signup** | **Login**
-:-------------------------:|:-------------------------:
-![Signup](/screenshots/signup.png) | ![Login](/screenshots/login.png)
+
+**Signup**
+  
+![Signup](/screenshots/signup.png)
+
+**Login**
+  
+![Login](/screenshots/login.png)
 
 ---
 
 ### 🏠 Home & Problem Navigation
 
-**Home** | **Main Page** | **Search Problems** | **Sort by Difficulty**
-:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![Home](/screenshots/home.png) | ![Main](/screenshots/main.png) | ![Search](/screenshots/search_problem.png) | ![Sort](/screenshots/sort_by_difficulty.png)
+**Home**
+
+![Home](/screenshots/home.png)
+
+**Main Page**
+
+![Main](/screenshots/main.png)
+
+**Search Problems**
+
+![Search](/screenshots/search_problem.png)
+
+**Sort by Difficulty**
+
+![Sort](/screenshots/sort_by_difficulty.png)
 
 ---
 
 ### 👩‍💻 Coding Interface
 
-**Coding Interface** | **Run Custom Code**
-:-------------------------:|:-------------------------:
-![Code Interface](/screenshots/coding_interface.png) | ![Run Custom](/screenshots/run_custom_code.png)
+**Coding Interface**
+
+![Coding Interface](/screenshots/coding_interface.png)
+
+**Run Custom Code**
+
+![Run Custom](/screenshots/run_custom_code.png)
 
 ---
 
 ### 📤 Submissions
 
-**Compilation Error** | **TLE** | **Runtime Success**
-:-------------------------:|:-------------------------:|:-------------------------:
-![Compilation Error](/screenshots/submission_compilation_error.png) | ![TLE](/screenshots/submission_tle.png) | ![Success](/screenshots/submission_success.png)
+**Compilation Error**
+
+![Compilation Error](/screenshots/submission_compilation_error.png)
+
+**Time Limit Exceeded (TLE)**
+
+![TLE](/screenshots/submission_tle.png)
+
+**Runtime Success**
+
+![Success](/screenshots/submission_success.png)
 
 ---
 
 ### 🧪 Test Case Validation
 
-**Test Case Success** | **Unauthorized Access**
-:-------------------------:|:-------------------------:
-![Testcase Success](/screenshots/testcase_successful.png) | ![Unauthorized](/screenshots/testcase_unauthorized.png)
+**Test Case Success**
+
+![Testcase Success](/screenshots/testcase_successful.png)
+
+**Unauthorized Access**
+
+![Unauthorized](/screenshots/testcase_unauthorized.png)
 
 ---
 
 ### 🛠️ Admin Features
 
-**Submit New Problem** | **Problem Successfully Submitted**
-:-------------------------:|:-------------------------:
-![Submit Problem](/screenshots/submit_problem.png) | ![Success Submission](/screenshots/successful_problem_submission.png)
+**Submit New Problem**
 
-**Delete Problem** | **Successful Deletion**
-:-------------------------:|:-------------------------:
-![Delete](/screenshots/delete_problem.png) | ![Success Delete](/screenshots/successful_deletion.png)
+![Submit Problem](/screenshots/submit_problem.png)
+
+**Problem Successfully Submitted**
+
+![Success Submission](/screenshots/successful_problem_submission.png)
+
+**Delete Problem**
+
+![Delete](/screenshots/delete_problem.png)
+
+**Successful Deletion**
+
+![Success Delete](/screenshots/successful_deletion.png)
 
 ---
 
@@ -94,4 +135,3 @@ Pull requests are welcome! If you'd like to contribute to **algoTest**, feel fre
 Have questions, suggestions, or feedback? Feel free to open an issue or reach out directly via GitHub.
 
 ---
-
