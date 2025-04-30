@@ -10,6 +10,7 @@ import ProblemSubmissionNav from "../components/problems/ProblemSubmissionNav.js
 import ProblemNav from "../components/problems/ProblemNav.jsx";
 import RunButton from "../components/run/RunButton.jsx";
 import SubmitButton from "../components/run/SubmitButton.jsx";
+import SubmissionsNav from "../components/misc/SubmissionsNav.jsx";
 
 const ProblemPage = () => {
   const { pid } = useParams();
@@ -70,6 +71,7 @@ int main() {
         <div className="flex items-center space-x-4">
           <ProblemNav />
           <ProblemSubmissionNav />
+          <SubmissionsNav />
           <Logout />
         </div>
       </nav>
