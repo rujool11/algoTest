@@ -9,18 +9,10 @@ import DeleteNav from '../components/misc/DeleteNav.jsx';
 
 const getBadgeClass = (verdict) => {
   const key = verdict.toLowerCase();
-  if (key === 'accepted') {
-    return 'bg-green-600 text-white';
-  }
-  if (key === 'tle') {
-    return 'bg-yellow-500 text-black';
-  }
-  if (key.includes('wrong') || key.includes('error') || key === 'runtime error') {
-    return 'bg-red-600 text-white';
-  }
-  if (key === 'pending') {
-    return 'bg-gray-500 text-white';
-  }
+  if (key === 'accepted') return 'bg-green-600 text-white';
+  if (key === 'tle') return 'bg-yellow-500 text-black';
+  if (key.includes('wrong') || key.includes('error') || key === 'runtime error') return 'bg-red-600 text-white';
+  if (key === 'pending') return 'bg-gray-500 text-white';
   return 'bg-gray-600 text-white';
 };
 
@@ -52,6 +44,20 @@ const Submissions = () => {
     }
   };
 
+  const handleDelete = async (id) => {
+    if (!window.confirm('Are you sure you want to delete this submission?')) return;
+    try {
+      await axios.delete(
+        `${BACKEND_URL}/api/submissions/delete/${id}`,
+        config
+      );
+      setSubmissions(prev => prev.filter(sub => sub._id !== id));
+      toast.success('Submission deleted successfully');
+    } catch (error) {
+      toast.error('Failed to delete submission');
+    }
+  };
+
   useEffect(() => {
     fetchSubmissions();
   }, [BACKEND_URL, user]);
@@ -79,8 +85,15 @@ const Submissions = () => {
             return (
               <div
                 key={sub._id}
-                className="bg-gray-800 text-white p-5 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                className="relative bg-gray-800 text-white p-5 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
               >
+                <button
+                  onClick={() => handleDelete(sub._id)}
+                  className="absolute top-3 right-3 text-gray-400 hover:text-red-500 font-bold text-lg"
+                  title="Delete Submission"
+                >
+                  ×
+                </button>
                 <h2 className="text-xl font-bold mb-3 text-blue-400">{sub.problemName}</h2>
                 <p className="mb-1"><strong className="text-gray-300">Language:</strong> {sub.language}</p>
                 <div className={`inline-block px-3 py-1 mt-2 mb-3 rounded-full text-sm font-semibold ${badgeClass}`}>
