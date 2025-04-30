@@ -135,3 +135,5 @@ Pull requests are welcome! If you'd like to contribute to **algoTest**, feel fre
 Have questions, suggestions, or feedback? Feel free to open an issue or reach out directly via GitHub.
 
 ---
+
+### TODO: add submissions page images; add video; fix minor README errors
