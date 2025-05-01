@@ -17,13 +17,11 @@
 - 🔐 Add or delete problems/test cases (requires submission & deletion passwords)
 - 🔍 Search problems
 - 🎯 Sort by difficulty
-- 🧪 Detailed test case feedback (authorized/unauthorized access)
-
 ---
 
 ## Video demonstration
 
-[![Watch the demo on YouTube](https://img.youtube.com/vi/AjmRyB9DeMo/0.jpg)](https://youtu.be/AjmRyB9DeMo)
+[![Watch the demo on YouTube]](https://youtu.be/AjmRyB9DeMo)
 
 
 ## 🖼️ Screenshots
