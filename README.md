@@ -23,6 +23,13 @@
 
 ## 🖼️ Screenshots
 
+### Landing Page
+
+**Home**
+
+![Home](/screenshots/home.png)
+
+
 ### 🔐 Authentication
 
 **Signup**
@@ -35,11 +42,7 @@
 
 ---
 
-### 🏠 Home & Problem Navigation
-
-**Home**
-
-![Home](/screenshots/home.png)
+### Problem Navigation
 
 **Main Page**
 
@@ -83,19 +86,19 @@
 
 ---
 
-### 🧪 Test Case Validation
+### 🧪 Test Case Submission
 
-**Test Case Success**
+**Test Case Submisson Success**
 
 ![Testcase Success](/screenshots/testcase_successful.png)
 
-**Unauthorized Access**
+**Unauthorized**
 
 ![Unauthorized](/screenshots/testcase_unauthorized.png)
 
 ---
 
-### 🛠️ Admin Features
+### 🛠️ Problem Submission and Deletion
 
 **Submit New Problem**
 
