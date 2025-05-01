@@ -21,6 +21,11 @@
 
 ---
 
+## Video demonstration
+
+[![Watch the demo on YouTube](https://img.youtube.com/vi/AjmRyB9DeMo/0.jpg)](https://youtu.be/AjmRyB9DeMo)
+
+
 ## 🖼️ Screenshots
 
 ### Landing Page
@@ -145,5 +150,3 @@ Pull requests are welcome! If you'd like to contribute to **algoTest**, feel fre
 Have questions, suggestions, or feedback? Feel free to open an issue or reach out directly via GitHub.
 
 ---
-
-### TODO: add submissions page images; add video; fix minor README errors
