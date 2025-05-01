@@ -21,7 +21,7 @@
 
 ## Video demonstration
 
-[![Watch the demo on YouTube]](https://youtu.be/AjmRyB9DeMo)
+[Watch the demo on YouTube](https://youtu.be/AjmRyB9DeMo)
 
 
 ## 🖼️ Screenshots
