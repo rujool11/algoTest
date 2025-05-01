@@ -84,6 +84,13 @@
 
 ![Success](/screenshots/submission_success.png)
 
+**View Submissions**
+
+![ViewSubmissions](/screenshots/view_submissions.png)
+
+**Delete Submissions**
+
+![DeleteSubmissions](/screenshots/delete_submissions.png)
 ---
 
 ### 🧪 Test Case Submission
