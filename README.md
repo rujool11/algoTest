@@ -1,22 +1,22 @@
-# algoTest 💻🔥
+# algoTest 
 
 **algoTest** is a full-stack online coding practice platform built using the **MERN stack**, **Tailwind CSS**, and some **Python** for backend scripting. It enables users to solve curated coding problems, test their solutions, and receive instant feedback based on custom inputs or pre-verified test cases.
 
 ---
 
-## 🚀 Features
+## Features
 
-- 👩‍💻 Solve curated coding problems in Python or C++
-- ⚙️ Run code against custom inputs
-- ✅ Validate solutions against verified test cases
-- 📤 Submit solutions and view:
-  - ✅ Success messages
-  - ❌ Compilation errors
-  - ⏰ Time Limit Exceeded (TLE)
-  - 💥 Runtime errors
-- 🔐 Add or delete problems/test cases (requires submission & deletion passwords)
-- 🔍 Search problems
-- 🎯 Sort by difficulty
+- Solve curated coding problems in Python or C++
+- Run code against custom inputs
+- Validate solutions against verified test cases
+- Submit solutions and view:
+  - Success messages
+  - Compilation errors
+  - Time Limit Exceeded (TLE)
+  - Runtime errors
+-  Add or delete problems/test cases (requires submission & deletion passwords)
+-  Search problems
+-  Sort by difficulty
 ---
 
 ## Video demonstration
@@ -136,15 +136,5 @@
 - **Authentication:** JWT-based secure login/signup
 
 ---
-
-## 🤝 Contributing
-
-Pull requests are welcome! If you'd like to contribute to **algoTest**, feel free to fork the repository, make changes, and submit a PR. Contributions that improve features, fix bugs, or enhance performance are appreciated!
-
----
-
-## 📬 Contact
-
-Have questions, suggestions, or feedback? Feel free to open an issue or reach out directly via GitHub.
 
 ---
